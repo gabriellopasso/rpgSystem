@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gerador de PDF com jsPDF</title>
+    </head>
+<body>
+    <button id="gerarPDF">Gerar PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script>
+            const jsPDF = require(jsPDF)
+            document.getElementById("gerarPDF").addEventListener("click", function() {
+            // Cria uma nova instância do jsPDF
+            const doc = new jsPDF();
+
+            // Adiciona conteúdo ao PDF
+            doc.text("Meu PDF com jsPDF", 10, 10);
+
+            // Salva o PDF no dispositivo
+            doc.save("meu_pdf.pdf");
+        });
+    </script>
+</body>
+</html>
